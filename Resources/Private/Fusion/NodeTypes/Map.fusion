@@ -21,8 +21,10 @@ prototype(Ttree.Map:Map) < prototype(Neos.Neos:Content) {
 		id = ${"ttree-map-" + identifier}
 		data-identifier = ${identifier}
 
-		class = 'ttree-map'
-		class.@process.appendClassUsedByJavascript = ${String.trim(value + ' ttree-map-configuration-js')}
+		class {
+			ttree-map = 'ttree-map'
+		}
+		class.@process.appendClassUsedByJavascript = ${Array.concat(value ,' ttree-map-configuration-js')}
 
 		style = ${"height: " + height + "; width: " + width + ";"}
 
